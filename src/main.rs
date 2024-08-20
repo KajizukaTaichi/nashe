@@ -106,8 +106,12 @@ impl Nashe {
             if chars[0] == '(' && chars[chars.len() - 1] == ')' {
                 let inner_brace = String::from_iter(chars[1..chars.len() - 1].iter());
                 result.push(self.run_command(inner_brace))
-            } else if let Some(i) = self.memory.get(&token) {
-                result.push(i.to_owned());
+            } else if chars[0] == '$' {
+                if let Some(i) = self.memory.get(&token.replacen("$", "", 1)) {
+                    result.push(i.to_owned());
+                } else {
+                    result.push(token);
+                }
             } else {
                 result.push(token);
             }
