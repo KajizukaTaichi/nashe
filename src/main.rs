@@ -124,7 +124,7 @@ impl Nashe {
         };
         if code[0] == "cd" {
             if std::env::set_current_dir(if let Some(i) = args.get(0) {
-                i.trim()
+                i
             } else {
                 return "".to_string();
             })
@@ -140,10 +140,10 @@ impl Nashe {
         if let Ok(output) = result {
             if output.status.success() {
                 let stdout = String::from_utf8_lossy(&output.stdout);
-                format!("{stdout}")
+                format!("{}", stdout.trim())
             } else {
                 let stderr = String::from_utf8_lossy(&output.stderr);
-                format!("{stderr}")
+                format!("{}", stderr.trim())
             }
         } else {
             code.join("\n")
