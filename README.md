@@ -1,4 +1,4 @@
 # Nashe
 Shell that only minimum functions.
 
-<img width="774" alt="image" src="https://github.com/user-attachments/assets/7b84d88e-a364-49ce-b6fa-980bc55a688d">
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/9ef45468-f2c3-425d-9e7a-3bc3948e7ed5">
